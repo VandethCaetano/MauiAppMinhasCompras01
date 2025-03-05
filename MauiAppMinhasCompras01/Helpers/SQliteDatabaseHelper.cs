@@ -1,4 +1,7 @@
-﻿using MauiAppMinhasCompras01.Models;
+﻿
+//Agenda02- DSI 3- VANDETH CAETANO
+
+using MauiAppMinhasCompras01.Models;
 using SQLite;
 
 namespace MauiAppMinhasCompras01.Helpers
