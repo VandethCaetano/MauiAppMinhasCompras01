@@ -1,4 +1,7 @@
-﻿using MauiAppMinhasCompras01.Helpers;
+﻿
+// Agenda 03 DSI 3 - Vandeth Caetano
+
+using MauiAppMinhasCompras01.Helpers;
 
 namespace MauiAppMinhasCompras01
 {
