@@ -1,5 +1,5 @@
 ﻿
-//Agenda02- DSI 3- VANDETH CAETANO
+//Agenda03- DSI 3- VANDETH CAETANO
 
 
 using MauiAppMinhasCompras01.Models;
