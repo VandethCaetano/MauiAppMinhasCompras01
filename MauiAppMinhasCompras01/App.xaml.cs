@@ -21,17 +21,14 @@ namespace MauiAppMinhasCompras01
                    "banco_sqlite_compras.db3");     
                         
                     _db = new SQLiteDatabaseHelper(path);
-
                 }
                 return _db; 
             } 
         }
-
             
         public App()
         {
             InitializeComponent();
-
             // MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());
         }

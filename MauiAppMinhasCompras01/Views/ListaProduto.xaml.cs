@@ -8,7 +8,6 @@ public partial class ListaProduto : ContentPage
 	{
 		InitializeComponent();
 	}
-
     private void ToolbarItem_Clicked(object sender, EventArgs e)
     {
 		try
@@ -19,6 +18,5 @@ public partial class ListaProduto : ContentPage
 		{ 
 				DisplayAlert("Ops", ex.Message, "OK");
 		}
-
     }
 }
