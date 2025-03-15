@@ -1,6 +1,5 @@
 using MauiAppMinhasCompras01.Models;
 using System.Collections.ObjectModel;
-using System.Linq.Expressions;
 
 namespace MauiAppMinhasCompras01.Views;
 
@@ -20,6 +19,7 @@ public partial class ListaProduto : ContentPage
         try
         {
             List<Produto> tmp = await App.Db.GetAll();
+            lista.Clear(); // Corrigido para evitar duplicações
             tmp.ForEach(i => lista.Add(i));
         }
         catch (Exception ex)

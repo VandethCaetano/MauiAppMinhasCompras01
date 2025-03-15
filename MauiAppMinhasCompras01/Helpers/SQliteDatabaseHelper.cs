@@ -1,9 +1,9 @@
-﻿
-//Agenda03- DSI 3- VANDETH CAETANO
-
+﻿//Agenda03- DSI 3- VANDETH CAETANO
 
 using MauiAppMinhasCompras01.Models;
 using SQLite;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MauiAppMinhasCompras01.Helpers
 {
@@ -18,38 +18,33 @@ namespace MauiAppMinhasCompras01.Helpers
         }
 
 
-        public Task<int> Insert(Produto p)
+        public async Task<int> Insert(Produto p)
         {
-            return _conn.InsertAsync(p); 
-        }
-    
-            public Task<List<Produto>> Update(Produto p) 
-        {
-            string sql = "UPDATE Produto Set Descricao=?, Quantidade =?, Preco=?, WHERE Id=?,";
-            return _conn.QueryAsync<Produto>(sql, p.Descricao, p.Quantidade, p.Preco, p.Id);
+            return await _conn.InsertAsync(p);
         }
 
-            public Task<int> Delete(int id) 
+        public async Task<int> Update(Produto p)
         {
-            return _conn.Table<Produto>().DeleteAsync(i => i.Id == id);
-        }
-
-            public Task<List<Produto>> GetAll() 
-        {
-            return _conn.Table<Produto>().ToListAsync();
-        }
-
-            public Task<List<Produto>> Search(string q) 
-
-        {
-            string sql = "SELECT + Produto WHERE descricao LIKE'%" + q + "%'"; 
-                
-            return _conn.QueryAsync<Produto>(sql);
+            string sql = "UPDATE Produto SET Descricao=?, Quantidade=?, Preco=? WHERE Id=?";
+            return await _conn.ExecuteAsync(sql, p.Descricao, p.Quantidade, p.Preco, p.Id);
         }
 
 
+        public async Task<int> Delete(int id)
+        {
+            return await _conn.Table<Produto>().DeleteAsync(i => i.Id == id);
+        }
 
+ 
+        public async Task<List<Produto>> GetAll()
+        {
+            return await _conn.Table<Produto>().ToListAsync();
+        }
 
-
+     
+        public async Task<List<Produto>> Search(string q)
+        {
+            return await _conn.QueryAsync<Produto>("SELECT * FROM Produto WHERE Descricao LIKE ?", "%" + q + "%");
         }
     }
+}

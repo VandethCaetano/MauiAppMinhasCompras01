@@ -1,7 +1,5 @@
-﻿
-// Agenda 03 DSI 3 - Vandeth Caetano
-
-using MauiAppMinhasCompras01.Helpers;
+﻿using MauiAppMinhasCompras01.Helpers;
+using System.IO;
 
 namespace MauiAppMinhasCompras01
 {
@@ -10,26 +8,24 @@ namespace MauiAppMinhasCompras01
         static SQLiteDatabaseHelper _db;
 
         public static SQLiteDatabaseHelper Db
-        {  
-            get 
-            { 
-                if(_db == null)
+        {
+            get
+            {
+                if (_db == null)
                 {
-                   string path = Path.Combine(
-                      Environment.GetFolderPath(
-                            Environment.SpecialFolder.LocalApplicationData), 
-                   "banco_sqlite_compras.db3");     
-                        
+                    string path = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "banco_sqlite_compras.db3");
+
                     _db = new SQLiteDatabaseHelper(path);
                 }
-                return _db; 
-            } 
+                return _db;
+            }
         }
-            
+
         public App()
         {
             InitializeComponent();
-            // MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());
         }
     }
