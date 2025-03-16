@@ -16,27 +16,31 @@ public partial class ListaProduto : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        try
-        {
-            List<Produto> tmp = await App.Db.GetAll();
-            lista.Clear(); // Corrigido para evitar duplicações
-            tmp.ForEach(i => lista.Add(i));
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Erro", ex.Message, "OK");
-        }
+
+        List<Produto> tmp = await App.Db.GetAll();
+        lista.Clear();
+        tmp.ForEach(i => lista.Add(i));
     }
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
-        try
-        {
-            await Navigation.PushAsync(new NovoProduto());
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Ops", ex.Message, "OK");
-        }
+        await Navigation.PushAsync(new NovoProduto());
+    }
+
+    private void ToolbarItem_Clicked_1(object sender, EventArgs e)
+    {
+        double soma = lista.Sum(i => i.Total);
+        string msg = $"O total é: {soma:C}";
+        DisplayAlert("Total dos produtos:", msg, "OK");
+    }
+
+    private async void txt_search_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        string q = e.NewTextValue;
+        lista.Clear();
+        List<Produto> tmp = await App.Db.Search(q);
+        lista.Clear();
+        tmp.ForEach(i => lista.Add(i));
+
     }
 }
