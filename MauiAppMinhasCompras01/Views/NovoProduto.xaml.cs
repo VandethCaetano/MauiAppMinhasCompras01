@@ -4,31 +4,36 @@ namespace MauiAppMinhasCompras01.Views;
 
 public partial class NovoProduto : ContentPage
 {
-	public NovoProduto()
-	{
-		InitializeComponent();
-	}
+    public NovoProduto()
+    {
+        InitializeComponent();
+    }
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
-		try 
-		{
-			Produto produto_anexado = BindingContext as Produto;
-			
-			Produto p = new Produto 
-			{
-				Id = produto_anexado.Id,
-				Descricao = txt_descricao.Text,
-				Quantidade = Convert.ToDouble(txt_quantidade.Text),
-				Preco = Convert.ToDouble(txt_preco.Text)
-			};
+        try
+        {
+            if (string.IsNullOrWhiteSpace(txt_descricao.Text) ||
+                string.IsNullOrWhiteSpace(txt_quantidade.Text) ||
+                string.IsNullOrWhiteSpace(txt_preco.Text))
+            {
+                await DisplayAlert("Atenção", "Por favor, preencha a descrição", "OK");
+                return;
+            }
 
-			await App.Db.Insert(p);
-			await DisplayAlert("Sucesso!" , " Registro inserido" , "Ok!");
+            Produto p = new Produto
+            {
+                Descricao = txt_descricao.Text,
+                Quantidade = Convert.ToDouble(txt_quantidade.Text),
+                Preco = Convert.ToDouble(txt_preco.Text)
+            };
 
-		} catch(Exception ex)
-		{
-			await DisplayAlert("Ops", ex.Message, "OK");
-		}
+            await App.Db.Insert(p);
+            await DisplayAlert("Sucesso!", "Registro inserido", "Ok!");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Ops", ex.Message, "OK");
+        }
     }
 }
