@@ -10,11 +10,13 @@
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout>
+
         <SearchBar x:Name="txt_search" 
                    Placeholder="Busca de Produtos"
-                   TextChanged="txt_search_TextChanged"
-                   />
-        <ListView x:Name="lst_produtos">
+                   TextChanged="txt_search_TextChanged" />
+
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
+
             <ListView.Header>
                 <Grid ColumnDefinitions="*, *, *, *, *">
                     <Label Grid.Column="0" Text="ID"/>
@@ -29,10 +31,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Text="Remover"/>
+                            <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/>
                         </ViewCell.ContextActions>
 
-                        <Grid ColumnDefinitions="*, *, *, *, * ">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
                             <Label Grid.Column="0" Text="{Binding Id}"/>
                             <Label Grid.Column="1" Text="{Binding Descricao}"/>
                             <Label Grid.Column="2" Text="{Binding Preco}"/>
@@ -42,6 +44,9 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
         </ListView>
+
     </VerticalStackLayout>
+
 </ContentPage>
