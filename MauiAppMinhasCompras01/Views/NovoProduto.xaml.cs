@@ -8,7 +8,6 @@ public partial class NovoProduto : ContentPage
     {
         InitializeComponent();
     }
-
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         try
@@ -17,7 +16,7 @@ public partial class NovoProduto : ContentPage
                 string.IsNullOrWhiteSpace(txt_quantidade.Text) ||
                 string.IsNullOrWhiteSpace(txt_preco.Text))
             {
-                await DisplayAlert("Atenção", "Por favor, preencha a descrição", "OK");
+                await DisplayAlert("Atenção", "Por favor, preencha a Tabela", "OK");
                 return;
             }
 
