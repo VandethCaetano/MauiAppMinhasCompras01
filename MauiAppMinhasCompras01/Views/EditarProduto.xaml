@@ -12,12 +12,15 @@
     <VerticalStackLayout Spacing="10" Padding="10">
             
                 <Label Text="Descrição Produto" />
-        <Entry x:Name="txt_descricao" Text="{Binding Descricao}"/>
+                <Entry x:Name="txt_descricao" Text="{Binding Descricao}"/>
             
                 <Label Text="Quantidade" />
                 <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric"/>
 
-                <Label Text="Preço unitário"/>
+                <Label Text="Categoria" />
+                <Entry x:Name="txt_categoria" Text="{Binding Categoria}"/>
+
+        <Label Text="Preço unitário"/>
                 <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric"/>
 
         </VerticalStackLayout>

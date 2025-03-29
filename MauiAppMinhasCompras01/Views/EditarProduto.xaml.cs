@@ -1,5 +1,4 @@
 using MauiAppMinhasCompras01.Models;
-
 namespace MauiAppMinhasCompras01.Views;
 
 public partial class EditarProduto : ContentPage
@@ -26,6 +25,7 @@ public partial class EditarProduto : ContentPage
                 Id = produto_anexado.Id,
                 Descricao = txt_descricao.Text,
                 Quantidade = Convert.ToDouble(txt_quantidade.Text),
+                Categoria = txt_descricao.Text,
                 Preco = Convert.ToDouble(txt_preco.Text)
             };
 

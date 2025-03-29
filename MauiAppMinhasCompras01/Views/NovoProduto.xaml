@@ -16,7 +16,11 @@
         <Label
             Text="Quantidade"/>
         <Entry x:Name="txt_quantidade" Keyboard="Numeric"/>
-        
+
+        <Label 
+        Text="Categoria"/>
+        <Entry x:Name="txt_categoria"/>
+
         <Label
             Text="Preço unitário"/>
         <Entry x:Name="txt_preco" Keyboard="Numeric"/>
