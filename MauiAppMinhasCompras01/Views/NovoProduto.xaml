@@ -11,18 +11,18 @@
     
     <VerticalStackLayout Spacing="10" Padding="10">
         <Label 
-            Text="Descrição Produto"/>
+            Text="Descrição Produto" FontAttributes="Bold" FontSize="14" />
         <Entry x:Name="txt_descricao"/>
         <Label
-            Text="Quantidade"/>
+            Text="Quantidade" FontAttributes="Bold" FontSize="14" />
         <Entry x:Name="txt_quantidade" Keyboard="Numeric"/>
 
         <Label 
-        Text="Categoria"/>
+        Text="Categoria" FontAttributes="Bold" FontSize="14" />
         <Entry x:Name="txt_categoria"/>
 
         <Label
-            Text="Preço unitário"/>
+            Text="Preço unitário" FontAttributes="Bold" FontSize="14" />
         <Entry x:Name="txt_preco" Keyboard="Numeric"/>
 
     </VerticalStackLayout>

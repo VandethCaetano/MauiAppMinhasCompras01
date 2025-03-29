@@ -23,7 +23,7 @@ public partial class ListaProduto : ContentPage
         lista.Clear();
         tmp.ForEach(i => lista.Add(i));
 
-        // Preenche o Picker com categorias únicas
+    
         var categorias = tmp
             .Select(p => p.Categoria)
             .Where(c => !string.IsNullOrWhiteSpace(c))

@@ -6,7 +6,6 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_1"/>
         <ToolbarItem Text="Adicionar" Clicked="ToolbarItem_Clicked"/>
-        <ToolbarItem Text="Relatorio" Clicked="ToolbarItem_Clicked_3"/>
         <ToolbarItem Text="Relatório" Clicked="AbrirRelatorio_Clicked"/>
     </ContentPage.ToolbarItems>
 
@@ -25,13 +24,14 @@
             <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
 
                 <ListView.Header>
-                    <Grid ColumnDefinitions="*, *, *, *, *, *">
-                        <Label Grid.Column="0" Text="ID"/>
-                        <Label Grid.Column="1" Text="Descrição"/>
-                        <Label Grid.Column="2" Text="Preço"/>
-                        <Label Grid.Column="3" Text="Qnt"/>
-                        <Label Grid.Column="4" Text="Categoria"/>
-                        <Label Grid.Column="5" Text="Total"/>
+                    <Grid ColumnDefinitions="*, *, *, *, *, *" >
+                        <Label Grid.Column="0" Text="ID" FontSize="14" FontAttributes="Bold"/>
+                        <Label Grid.Column="1" Text="Descrição" FontSize="14" FontAttributes="Bold"/>
+                        <Label Grid.Column="2" Text="Preço" FontSize="14" FontAttributes="Bold"/>
+                        <Label Grid.Column="3" Text="Qnt" FontSize="14" FontAttributes="Bold"/>
+                        <Label Grid.Column="4" Text="Categoria" FontSize="14" FontAttributes="Bold"/>
+                        <Label Grid.Column="5" Text="Total" FontSize="14" FontAttributes="Bold"/>
+
                     </Grid>
                 </ListView.Header>
 

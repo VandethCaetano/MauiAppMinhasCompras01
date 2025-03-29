@@ -10,17 +10,17 @@
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout Spacing="10" Padding="10">
-            
-                <Label Text="Descrição Produto" />
-                <Entry x:Name="txt_descricao" Text="{Binding Descricao}"/>
-            
-                <Label Text="Quantidade" />
+
+        <Label Text="Descrição Produto"  FontAttributes="Bold" FontSize="14" />
+                <Entry x:Name="txt_descricao" Text="{Binding Descricao}" />
+
+                <Label Text="Quantidade"  FontAttributes="Bold" FontSize="14" />
                 <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric"/>
 
-                <Label Text="Categoria" />
+                <Label Text="Categoria" FontAttributes="Bold" FontSize="14" />
                 <Entry x:Name="txt_categoria" Text="{Binding Categoria}"/>
 
-        <Label Text="Preço unitário"/>
+                <Label Text="Preço unitário" FontAttributes="Bold" FontSize="14" />
                 <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric"/>
 
         </VerticalStackLayout>
